@@ -1,6 +1,5 @@
 package commons;
 
-import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +9,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,7 +36,12 @@ public class BasePage {
 	// 5 - Kiểu dữ liệu trả về cho hàm
 	// Nếu như có return dữ liệu thì sẽ khớp vs kiểu dữ liệu ở số 2
 	// Nếu như có return thì nó là cái step cuối cùng
-
+	
+	// 60 hàm được wrapper lại từ thư viện selenium
+	public static BasePage getBasePage() {
+		return new BasePage();
+	}
+	
 	public void openUrl(WebDriver driver, String url) {
 		driver.get(url);
 	}
@@ -331,5 +334,12 @@ public class BasePage {
 	
 	public void waitForListElementVisible(WebDriver driver, String xPathExpression) {
 		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(xPathExpression)));
+	}
+	public void waitForElementClickable(WebDriver driver, String xPathExpression) {
+		new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(xPathExpression)));
+	}
+	
+	public void waitElementInvisible(WebDriver driver, String xPathExpression) {
+		new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xPathExpression)));
 	}
 }
