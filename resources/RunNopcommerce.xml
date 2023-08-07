@@ -2,7 +2,7 @@
 <suite parallel="false" name="Nop Commerce UI Automation">
   <test name="Run on Chrome">
     <classes>
-      <class name="com.nopcommerce.user.Level_01_Register"/>
+      <class name="com.nopcommerce.user.Level_05_Page_Object_Pattern"/>
     </classes>
   </test> 
 </suite> 
