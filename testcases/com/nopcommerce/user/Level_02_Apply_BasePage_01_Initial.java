@@ -12,16 +12,16 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 
-public class Level_03_Apply_BasePage_Static {
+public class Level_02_Apply_BasePage_01_Initial {
 	WebDriver driver;
-	BasePage basePage = BasePage.getBasePage();
+	BasePage basePage = new BasePage();
 	String projectPath = System.getProperty("user.dir");
 	
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 		driver = new FirefoxDriver();
-				
+		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	

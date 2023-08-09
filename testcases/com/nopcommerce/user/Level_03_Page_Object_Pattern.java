@@ -16,7 +16,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_05_Page_Object_Pattern extends BasePage {
+public class Level_03_Page_Object_Pattern extends BasePage {
 	private WebDriver driver;
 	private String projectPath = System.getProperty("user.dir");
 	private String emailAddress = getEmailAddress();
