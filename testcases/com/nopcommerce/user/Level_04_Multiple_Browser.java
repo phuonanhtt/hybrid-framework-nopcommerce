@@ -1,27 +1,22 @@
 package com.nopcommerce.user;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.BasePage;
+import commons.BaseTest;
 import pageObjects.CustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_04_Multiple_Browser extends BasePage {
+public class Level_04_Multiple_Browser extends BaseTest {
 	private WebDriver driver;
-	private String projectPath = System.getProperty("user.dir");
 	private String emailAddress = getEmailAddress();
 	
 	private HomePageObject homePage;
@@ -32,25 +27,7 @@ public class Level_04_Multiple_Browser extends BasePage {
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
-		// equals: Kiểm tra giá trị có phân biệt hoa thường
-		// equalsIgnoreCase: Ko phân biệt hoa thường
-		if (browserName.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-		} else if(browserName.equalsIgnoreCase("Firefox")){
-			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		} else if (browserName.equalsIgnoreCase("Edge")) {
-			System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
-			driver = new EdgeDriver();
-		} else {
-			throw new RuntimeException("Browser name is not valid");
-		}
-
-		
-		driver.get("https://demo.nopcommerce.com/");
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
+		driver = getBrowserDriver(browserName);
 	}
 
 	@Test
