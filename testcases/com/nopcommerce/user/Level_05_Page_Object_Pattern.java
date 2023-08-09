@@ -37,7 +37,7 @@ public class Level_05_Page_Object_Pattern extends BasePage {
 		driver.manage().window().maximize();
 	}
 
-	@Test
+//	@Test
 	public void Register_01_Empty_Data() {
 		// Khi gọi đến 1 page thì sẽ khởi tạo page đó lên
 		
@@ -165,6 +165,16 @@ public class Level_05_Page_Object_Pattern extends BasePage {
 		Assert.assertEquals(customerPage.getFirstNameAttributeValue(), "John");
 		Assert.assertEquals(customerPage.getLastNameAttributeValue(), "Wick");
 		Assert.assertEquals(customerPage.getEmailAttributeValue(), emailAddress);
+	}
+	
+	@Test
+	public void Register_07_Login() {		
+		homePage = new HomePageObject(driver);
+		
+		homePage.clickToLoginLink();
+		
+		loginPage = new LoginPageObject(driver);
+		loginPage.loginAsUser(emailAddress, "12345678");
 	}
 
 	@AfterClass

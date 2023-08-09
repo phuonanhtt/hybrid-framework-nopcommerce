@@ -11,7 +11,12 @@ public class LoginPageObject extends BasePage{
 	public LoginPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
-
+	
+	public void loginAsUser(String email, String password) {
+		enterToEmailTextbox(email);
+		enterToPasswordTextbox(password);
+		clickToLoginButton();
+	}
 	public void enterToEmailTextbox(String email) {
 		waitForElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, email);
