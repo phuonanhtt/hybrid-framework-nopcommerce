@@ -1,7 +1,5 @@
 package com.nopcommerce.user;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -163,11 +161,6 @@ public class Level_04_Multiple_Browser extends BaseTest {
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
-	}
-
-	public String getEmailAddress() {
-		Random rand = new Random();
-		return "user" + rand.nextInt(9999) + "@gmail.com";
+		quitBrowserDriver();
 	}
 }
