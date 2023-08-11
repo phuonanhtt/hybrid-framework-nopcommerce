@@ -1,5 +1,6 @@
 package commons;
 
+import java.time.Duration;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -7,8 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	// Chứa những hàm dùng chung cho cả layer testcases
@@ -27,29 +26,24 @@ public class BaseTest {
 			// 5.x
 			// Tự tải chromedriver tương ứng vs Chrome browser + khởi tạo driver lên
 //			driver = WebDriverManager.chromedriver().driverVersion("114.0.5735.90").create();
-			driver = WebDriverManager.chromedriver().create();
+			driver = new ChromeDriver();
 			break;
 		case FIREFOX:
 //			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 //			driver = new FirefoxDriver();
-			driver = WebDriverManager.firefoxdriver().create();
+			driver = new FirefoxDriver();
 			break;
 		case EDGE:
 //			System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
 //			driver = new EdgeDriver();
-			driver = WebDriverManager.edgedriver().create();
-			break;
-		case OPERA:
-//			System.setProperty("webdriver.opera.driver", projectPath + "\\browserDrivers\\operadriver.exe");
-//			driver = new EdgeDriver();
-			driver = WebDriverManager.operadriver().create();
+			driver = new EdgeDriver();
 			break;
 		default:
 			throw new RuntimeException("Browser name is not valid");
 		}
 		
 		driver.get("https://demo.nopcommerce.com/");
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.manage().window().maximize();
 		
 		return driver;

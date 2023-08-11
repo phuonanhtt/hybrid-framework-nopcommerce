@@ -1,5 +1,6 @@
 package commons;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
@@ -88,7 +89,7 @@ public class BasePage {
 	}
 
 	public Alert waitForAlertPresence(WebDriver driver) {
-		return new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.alertIsPresent());
 	}
 
 	public void switchToWindowByID(WebDriver driver, String windowID) {
@@ -203,7 +204,7 @@ public class BasePage {
 		clickToElement(driver, xPathParent);
 		sleepInSecond(1);
 
-		List<WebElement> allItems = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(xPathChild)));
+		List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(xPathChild)));
 
 		for (WebElement tempElement : allItems) {
 			if (tempElement.getText().equals(expectedText)) {
@@ -329,17 +330,17 @@ public class BasePage {
 	}
 
 	public void waitForElementVisible(WebDriver driver, String xPathExpression) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(xPathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(xPathExpression)));
 	}
 	
 	public void waitForListElementVisible(WebDriver driver, String xPathExpression) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(xPathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(xPathExpression)));
 	}
 	public void waitForElementClickable(WebDriver driver, String xPathExpression) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(xPathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(By.xpath(xPathExpression)));
 	}
 	
 	public void waitElementInvisible(WebDriver driver, String xPathExpression) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xPathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xPathExpression)));
 	}
 }
