@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Nop Commerce UI Automation">
-  <test name="Run on Chrome">
-  <parameter name="browser" value="Chrome" />
-    <classes>
-      <class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
-    </classes>
-  </test> 
+
   <test name="Run on Firefox">
   <parameter name="browser" value="Firefox" />
     <classes>
-      <class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
-    </classes>
-  </test> 
-  <test name="Run on Edge">
-  <parameter name="browser" value="Edge" />
-    <classes>
-      <class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
+      <class name="com.nopcommerce.user.Level_05_Page_Factory"/>
     </classes>
   </test> 
 </suite> 
