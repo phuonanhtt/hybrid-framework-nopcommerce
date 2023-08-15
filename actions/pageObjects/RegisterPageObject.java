@@ -84,10 +84,10 @@ public class RegisterPageObject extends BasePage{
 		return getElementText(confirmPasswordErrorMsg);
 	}
 
-	public void clickToHomePageLogo() {
+	public HomePageObject clickToHomePageLogo() {
 		waitForElementVisible(driver, homePageLogo);
 		clickToElement(driver, homePageLogo);
-		
+		return new HomePageObject(driver);
 	}
 
 	public void enterToFirstNameTextbox(String firstName) {

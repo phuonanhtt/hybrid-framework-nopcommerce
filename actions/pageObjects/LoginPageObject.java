@@ -40,9 +40,10 @@ public class LoginPageObject extends BasePage {
 		sendkeyToElement(passwordTextbox, password);
 	}
 
-	public void clickToLoginButton() {
+	public HomePageObject clickToLoginButton() {
 		waitForElementClickable(driver, loginButton);
 		clickToElement(driver, loginButton);
+		return new HomePageObject(driver);
 	}
 
 }
