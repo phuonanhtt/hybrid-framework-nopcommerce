@@ -11,9 +11,31 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BaseTest {
 	// Chứa những hàm dùng chung cho cả layer testcases
 	private WebDriver driver;
-	private String projectPath = System.getProperty("user.dir");
+//	private String projectPath = System.getProperty("user.dir");
 	
 	protected WebDriver getBrowserDriver(String browserName) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		switch (browserList) {
+		case CHROME:
+			driver = new ChromeDriver();
+			break;
+		case FIREFOX:
+			driver = new FirefoxDriver();
+			break;
+		case EDGE:
+			driver = new EdgeDriver();
+			break;
+		default:
+			throw new RuntimeException("Browser name is not valid");
+		}
+		
+		driver.get("https://demo.nopcommerce.com/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().window().maximize();
+		
+		return driver;
+	}
+	protected WebDriver getBrowserDriver(String browserName, String url) {
 		// equals: Kiểm tra giá trị có phân biệt hoa thường
 		// equalsIgnoreCase: Ko phân biệt hoa thường
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -41,7 +63,7 @@ public class BaseTest {
 			throw new RuntimeException("Browser name is not valid");
 		}
 		
-		driver.get("https://demo.nopcommerce.com/");
+		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.manage().window().maximize();
 		

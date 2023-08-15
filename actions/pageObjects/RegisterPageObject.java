@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.RegisterPageUI;
 
 
@@ -47,7 +48,7 @@ public class RegisterPageObject extends BasePage{
 	public HomePageObject clickToHomePageLogo() {
 		waitForElementVisible(driver, RegisterPageUI.HOME_PAGE_LOGO_IMAGE);
 		clickToElement(driver, RegisterPageUI.HOME_PAGE_LOGO_IMAGE);
-		return new HomePageObject(driver);
+		return PageGeneratorManager.getHomePage(driver);
 		
 	}
 
