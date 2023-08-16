@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BaseTest {
 	// Chứa những hàm dùng chung cho cả layer testcases
 	private WebDriver driver;
+	private long timeout = GlobalConstants.LONG_TIMEOUT;
 //	private String projectPath = System.getProperty("user.dir");
 	
 	protected WebDriver getBrowserDriver(String browserName) {
@@ -30,7 +31,7 @@ public class BaseTest {
 		}
 		
 		driver.get("https://demo.nopcommerce.com/");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 		driver.manage().window().maximize();
 		
 		return driver;
@@ -64,7 +65,7 @@ public class BaseTest {
 		}
 		
 		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 		driver.manage().window().maximize();
 		
 		return driver;

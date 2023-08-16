@@ -8,6 +8,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
+import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import pageObjects.admin.AdminDashboardPageObject;
 import pageObjects.admin.AdminLoginPageObject;
@@ -16,11 +17,12 @@ import pageObjects.users.HomePageObject;
 import pageObjects.users.LoginPageObject;
 import pageObjects.users.RegisterPageObject;
 
-public class Level_09_Switch_Site_Url extends BaseTest {
+public class Level_10_GLobal_Constants extends BaseTest {
 	private WebDriver driver;
 	private String emailAddress = getEmailAddress();
 	
-	private String userUrl, adminUrl;
+	private String userUrl = GlobalConstants.DEV_USER_URL;
+	private String adminUrl = GlobalConstants.DEV_ADMIN_URL;
 	
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
@@ -32,14 +34,11 @@ public class Level_09_Switch_Site_Url extends BaseTest {
 	
 	private AdminDashboardPageObject adminDashboardPage;
 	
-	@Parameters({"browser","userUrl","adminUrl"})
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass(String browserName, String userUrl, String adminUrl) {		
+	public void beforeClass(String browserName) {		
 		driver = getBrowserDriver(browserName, userUrl);
 		homePage = PageGeneratorManager.getHomePage(driver);
-		
-		this.userUrl = userUrl;
-		this.adminUrl = adminUrl;
 		
 	}
 
@@ -82,7 +81,7 @@ public class Level_09_Switch_Site_Url extends BaseTest {
 		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
 		
 		// login 
-		adminDashboardPage = adminLoginPage.loginAsAdmin("admin@yourstore.com", "admin");
+		adminDashboardPage = adminLoginPage.loginAsAdmin(GlobalConstants.DEV_ADMIN_USERNAME, GlobalConstants.DEV_ADMIN_PASSWORD);
 		Assert.assertTrue(adminDashboardPage.isPageLoadedSuccess(driver));
 		
 		// đki tài khoản ở trang user xong qua admin để verify lại

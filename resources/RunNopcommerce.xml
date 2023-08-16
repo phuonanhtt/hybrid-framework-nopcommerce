@@ -6,7 +6,7 @@
   <test name="Run on Firefox">
   <parameter name="browser" value="Firefox" />
     <classes>
-      <class name="com.nopcommerce.user.Level_09_Switch_Site_Url"/>
+      <class name="com.nopcommerce.user.Level_10_GLobal_Constants"/>
     </classes>
   </test> 
 </suite> 
