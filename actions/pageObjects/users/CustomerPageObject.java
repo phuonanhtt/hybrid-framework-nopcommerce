@@ -1,16 +1,17 @@
-package pageObjects;
+package pageObjects.users;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import commons.BasePage;
-import pageUIs.CustomerPageUI;
+import pageUIs.users.CustomerPageUI;
 
-public class CustomerPageObject extends BasePage{
+public class CustomerPageObject extends SideBarMyAccountPageObject{
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	
 	public CustomerPageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 

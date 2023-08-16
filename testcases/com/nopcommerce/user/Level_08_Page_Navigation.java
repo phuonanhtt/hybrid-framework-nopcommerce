@@ -17,7 +17,7 @@ import pageObjects.users.LoginPageObject;
 import pageObjects.users.RegisterPageObject;
 import pageObjects.users.RewardPointPageObject;
 
-public class Level_07_Switch_Multiple_Page extends BaseTest {
+public class Level_08_Page_Navigation extends BaseTest {
 	private WebDriver driver;
 	private String emailAddress = getEmailAddress();
 	
@@ -25,6 +25,7 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;
 	
+	// Thuộc side bar nên gọi các hàm tron side bar ra được
 	private CustomerPageObject customerPage;
 	private AddressesPageObject addressesPage;
 	private DownloadableProductPageObject downloadableProductPage;
@@ -68,27 +69,22 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	@Test
 	public void User_02_Switch_Page() {
 		// Customer info → Downloadable products
-		// downloadableProductPage = customerPage.openDownloadableProductPage(driver);
-		// downloadableProductPage.sleepInSecond(3);
-		
+		downloadableProductPage = customerPage.openDownloadableProductPage();
+		downloadableProductPage.sleepInSecond(3);
 		// Downloadable products → Addresses
-		// addressesPage = downloadableProductPage.openAddressesPage(driver);
-		// addressesPage.sleepInSecond(3);
-		
+		addressesPage = downloadableProductPage.openAddressesPage();
+		addressesPage.sleepInSecond(3);
 		// Addresses → Reward points
-		// rewardPointPage = addressesPage.openRewardPointPage(driver);
-		// rewardPointPage.sleepInSecond(3);
-		
+		rewardPointPage = addressesPage.openRewardPointPage();
+		rewardPointPage.sleepInSecond(3);
 		// Reward points → Customer info 
-		//customerPage = rewardPointPage.openCustomerInfoPage(driver);
-		// customerPage.sleepInSecond(3);
-		
+		customerPage = rewardPointPage.openCustomerInfoPage();
+		customerPage.sleepInSecond(3);
 		// Customer info → Addresses
-		// addressesPage = customerPage.openAddressesPage(driver);
-		// addressesPage.sleepInSecond(3);
-		
+		addressesPage = customerPage.openAddressesPage();
+		addressesPage.sleepInSecond(3);
 		// Addresses → Downloadable products
-		// downloadableProductPage = addressesPage.openDownloadableProductPage(driver);
+		downloadableProductPage = addressesPage.openDownloadableProductPage();
 	}
 
 	@AfterClass
