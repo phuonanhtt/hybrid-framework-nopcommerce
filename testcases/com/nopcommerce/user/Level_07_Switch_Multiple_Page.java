@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObjects.users.AddressesPageObject;
+import pageObjects.AddressesPageObject;
 import pageObjects.users.CustomerPageObject;
-import pageObjects.users.DownloadableProductPageObject;
 import pageObjects.users.HomePageObject;
 import pageObjects.users.LoginPageObject;
 import pageObjects.users.RegisterPageObject;
-import pageObjects.users.RewardPointPageObject;
+import pageObjects.DownloadableProductPageObject;
+import pageObjects.RewardPointPageObject;
 
 public class Level_07_Switch_Multiple_Page extends BaseTest {
 	private WebDriver driver;
@@ -24,11 +24,10 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;
-	
 	private CustomerPageObject customerPage;
-	private AddressesPageObject addressesPage;
 	private DownloadableProductPageObject downloadableProductPage;
 	private RewardPointPageObject rewardPointPage;
+	private AddressesPageObject addressesPage;
 	
 	@Parameters({"browser","userUrl","adminUrl"})
 	@BeforeClass
@@ -67,28 +66,23 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	
 	@Test
 	public void User_02_Switch_Page() {
-		// Customer info → Downloadable products
-		// downloadableProductPage = customerPage.openDownloadableProductPage(driver);
-		// downloadableProductPage.sleepInSecond(3);
-		
-		// Downloadable products → Addresses
-		// addressesPage = downloadableProductPage.openAddressesPage(driver);
-		// addressesPage.sleepInSecond(3);
-		
-		// Addresses → Reward points
-		// rewardPointPage = addressesPage.openRewardPointPage(driver);
-		// rewardPointPage.sleepInSecond(3);
-		
-		// Reward points → Customer info 
-		//customerPage = rewardPointPage.openCustomerInfoPage(driver);
-		// customerPage.sleepInSecond(3);
-		
-		// Customer info → Addresses
-		// addressesPage = customerPage.openAddressesPage(driver);
-		// addressesPage.sleepInSecond(3);
-		
-		// Addresses → Downloadable products
-		// downloadableProductPage = addressesPage.openDownloadableProductPage(driver);
+//		// Customer info → Downloadable products
+//		downloadableProductPage = customerPage.openDownloadableProductPage(driver);
+//		downloadableProductPage.sleepInSecond(3);
+//		// Downloadable products → Addresses
+//		addressesPage = downloadableProductPage.openAddressesPage(driver);
+//		addressesPage.sleepInSecond(3);
+//		// Addresses → Reward points
+//		rewardPointPage = addressesPage.openRewardPointPage(driver);
+//		registerPage.sleepInSecond(3);
+//		// Reward points → Customer info 
+//		customerPage = rewardPointPage.openCustomerInfoPage(driver);
+//		customerPage.sleepInSecond(3);
+//		// Customer info → Addresses
+//		addressesPage = customerPage.openAddressesPage(driver);
+//		addressesPage.sleepInSecond(3);
+//		// Addresses → Downloadable products
+//		downloadableProductPage = addressesPage.openDownloadableProductPage(driver);
 	}
 
 	@AfterClass
