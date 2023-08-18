@@ -9,13 +9,14 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObjects.AddressesPageObject;
+import pageObjects.users.AddressesPageObject;
 import pageObjects.users.CustomerPageObject;
+import pageObjects.users.DownloadableProductPageObject;
 import pageObjects.users.HomePageObject;
 import pageObjects.users.LoginPageObject;
 import pageObjects.users.RegisterPageObject;
-import pageObjects.DownloadableProductPageObject;
-import pageObjects.RewardPointPageObject;
+import pageObjects.users.RewardPointPageObject;
+
 
 public class Level_07_Switch_Multiple_Page extends BaseTest {
 	private WebDriver driver;
