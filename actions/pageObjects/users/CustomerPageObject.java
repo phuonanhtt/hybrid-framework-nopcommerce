@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import commons.BasePage;
 import pageUIs.users.CustomerPageUI;
 
-public class CustomerPageObject extends SideBarMyAccountPageObject{
+public class CustomerPageObject extends MyAccountSideBarPageObject{
 	WebDriver driver;
 	WebDriverWait explicitWait;
 	

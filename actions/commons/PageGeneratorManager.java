@@ -1,14 +1,19 @@
 package commons;
 
+import org.checkerframework.common.reflection.qual.NewInstance;
 import org.openqa.selenium.WebDriver;
 
 import pageObjects.admin.AdminDashboardPageObject;
 import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.users.AddressesPageObject;
+import pageObjects.users.BackInStockPageObject;
+import pageObjects.users.ChangePasswordPageObject;
 import pageObjects.users.CustomerPageObject;
 import pageObjects.users.DownloadableProductPageObject;
 import pageObjects.users.HomePageObject;
 import pageObjects.users.LoginPageObject;
+import pageObjects.users.MyProductReviewPageObject;
+import pageObjects.users.OrderPageObject;
 import pageObjects.users.RegisterPageObject;
 import pageObjects.users.RewardPointPageObject;
 
@@ -49,6 +54,22 @@ public class PageGeneratorManager {
 	
 	public static AdminDashboardPageObject getAdminDashboardPage(WebDriver driver) {
 		return new AdminDashboardPageObject(driver);
+	}
+
+	public static MyProductReviewPageObject getMyProductReviewPage(WebDriver driver) {
+		return new MyProductReviewPageObject(driver);
+	}
+
+	public static ChangePasswordPageObject getChangePasswordPage(WebDriver driver) {
+		return new ChangePasswordPageObject(driver);
+	}
+
+	public static BackInStockPageObject getBackInStockPage(WebDriver driver) {
+		return new BackInStockPageObject(driver);
+	}
+
+	public static OrderPageObject getOrderPage(WebDriver driver) {
+		return new OrderPageObject(driver);
 	}
 	
 }

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class RewardPointPageObject extends SideBarMyAccountPageObject{
+public class RewardPointPageObject extends MyAccountSideBarPageObject{
 	private WebDriver driver;
 
 	public RewardPointPageObject(WebDriver driver) {

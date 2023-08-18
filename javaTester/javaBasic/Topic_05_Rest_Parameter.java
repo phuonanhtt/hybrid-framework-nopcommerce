@@ -1,5 +1,7 @@
 package javaBasic;
 
+import java.util.ArrayList;
+
 import org.testng.annotations.Test;
 
 public class Topic_05_Rest_Parameter {
@@ -35,6 +37,8 @@ public class Topic_05_Rest_Parameter {
 		// 4 param
 		clickToElement(dynamicCountry, "12253515", "AFRICA", "12599691", "24853148");
 		clickToElement(dynamicCountry, "764956", "Arab Rep of Egypt", "802948", "1567904");
+	
+		
 	}
 	
 	// Hàm để click vào 1 element cố định
