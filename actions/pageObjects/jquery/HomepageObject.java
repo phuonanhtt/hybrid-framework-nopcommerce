@@ -44,4 +44,9 @@ public class HomepageObject extends BasePage{
 		waitForElementVisible(driver, HomePageUI.CLOSE_BUTTON_EDIT_POPUP_STRING);
 		clickToElement(driver, HomePageUI.CLOSE_BUTTON_EDIT_POPUP_STRING);
 	}
+
+	public void getAllPageValuesByColumnName(String clumnName) {
+		// TODO Auto-generated method stub
+		
+	}
 }
