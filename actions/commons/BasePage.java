@@ -332,6 +332,11 @@ public class BasePage {
 		new Actions(driver).sendKeys(getElement(driver, locator), key).perform();
 		;
 	}
+	
+	public void sendKeyBoardToElement(WebDriver driver, String locator, Keys key, String restParam) {
+		new Actions(driver).sendKeys(getDynamicLocator(locator, restParam), key).perform();
+		;
+	}
 
 	public Object executeForBrowser(WebDriver driver, String javaScript) {
 		return ((JavascriptExecutor) driver).executeScript(javaScript);
