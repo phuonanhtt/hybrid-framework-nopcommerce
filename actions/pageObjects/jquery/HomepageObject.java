@@ -1,7 +1,11 @@
 package pageObjects.jquery;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import commons.BasePage;
 import graphql.PublicApi;
@@ -45,8 +49,32 @@ public class HomepageObject extends BasePage{
 		clickToElement(driver, HomePageUI.CLOSE_BUTTON_EDIT_POPUP_STRING);
 	}
 
-	public void getAllPageValuesByColumnName(String clumnName) {
-		// TODO Auto-generated method stub
+	public void getAllPageValuesByColumnName(String columnName) {
+		
+		List<String> allValues = new ArrayList<String>();
+		
+		// b1: Lấy ra tất cả các page 
+		List<WebElement> allPageLinks = getLisElement(driver, HomePageUI.ALL_PAGE_LINK);
+		
+		int columnIndex =  getListElementSize(driver, HomePageUI.COLUMN_INDEX_BY_COLUMN_NAME, columnName) + 1;
+		// b2: duyệt qua từng page
+		for (WebElement pageLink : allPageLinks) {
+			pageLink.click();
+			sleepInSecond(2);
+			
+			// b3: lấy ra tất cả các giá trị của 1 cột trong page đó -> lưu nó vào List/ Set...
+			List<WebElement> allRowValues = getLisElement(driver, HomePageUI.ALL_VALUES_BY_COLUMN_NAME, String.valueOf(columnIndex));
+			
+			for (WebElement rowValue : allRowValues) {
+				allValues.add(rowValue.getText());
+			}
+			
+			// im ra hết tất cả giá trị của 1 cột trong all page
+			for (String value : allValues) {
+				System.out.println(value);
+			}
+			
+		}
 		
 	}
 }

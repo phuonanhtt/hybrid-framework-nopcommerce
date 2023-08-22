@@ -1,5 +1,8 @@
 package com.jquery.table;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -14,6 +17,8 @@ import pageObjects.jquery.PageGeneratorManager;
 public class Level_12_Handle_DataTable extends BaseTest {
 	private WebDriver driver;
 	HomepageObject homePage;
+	List<String> allValueUI = new ArrayList<String>();
+	List<String> allValueDB = new ArrayList<String>();
 	
 	@Parameters({"browser", "url"})
 	@BeforeClass
@@ -87,10 +92,8 @@ public class Level_12_Handle_DataTable extends BaseTest {
 	@Test
 	public void TC_05_Get_All_Column_Values() {
 		homePage.getAllPageValuesByColumnName("Country");
-		// b1: Lấy ra tất cả các page 
-		// b2: duyệt qua từng page
-		// b3: lấy ra tất cả các giá trị của 1 cột trong page đó -> lưu nó vào List/ Set...
-		// b4: duyệt hết các page còn lại
+		homePage.getAllPageValuesByColumnName("Total");
+		
 		
 	}
 	
