@@ -229,6 +229,12 @@ public class BasePage {
 			clickToElement(driver, locator);
 		}
 	}
+	
+	public void checkToCheckboxRadio(WebDriver driver, String locator, String... restParam ) {
+		if (!getElement(driver, getDynamicLocator(locator, restParam)).isSelected()) {
+			clickToElement(driver, getDynamicLocator(locator, restParam));
+		}
+	}
 
 	public void unCheckToCheckbox(WebDriver driver, String locator) {
 		if (getElement(driver, locator).isSelected()) {
@@ -248,6 +254,10 @@ public class BasePage {
 
 	public void selectDropdown(WebDriver driver, String locator, String itemText) {
 		new Select(getElement(driver, locator)).selectByVisibleText(itemText);
+	}
+	
+	public void selectDropdown(WebDriver driver, String locator, String itemText, String... restParam) {
+		new Select(getElement(driver, getDynamicLocator(locator, restParam))).selectByVisibleText(itemText);
 	}
 
 	public Boolean isDropdownMultiple(WebDriver driver, String locator) {

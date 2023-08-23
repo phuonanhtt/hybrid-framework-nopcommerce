@@ -89,16 +89,60 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		homePage.refreshCurrentPage(driver);
 	}
 
-	@Test
+//	@Test
 	public void TC_05_Get_All_Column_Values() {
-		homePage.getAllPageValuesByColumnName("Country");
+		// UI: Rest Assured/ Karate
+		allValueUI = homePage.getAllPageValuesByColumnName("Country");
+		
+//		// DB: JTDS
+//		allValueDB = homePage.getAllPageValuesByColumnNameInDB("Country");
+		
+//		Assert.assertEquals(allValueUI, allValueDB);
+		
 		homePage.getAllPageValuesByColumnName("Total");
 		
 		
 	}
 	
-	@Test
+//	@Test
 	public void TC_06_Action_By_Index() {
+		homePage.openUrl(driver, "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
+		
+		// Nhập vào textbox tại cột Contact Person dòng thứ 2
+		homePage.enterToTextboxByColumnNameAndRowIndex("Contact Person", "2", "Messi");
+		homePage.enterToTextboxByColumnNameAndRowIndex("Company", "1", "Barcelona");
+		
+		// Select dữ liệu tại cột Country dòng thứ 3
+		homePage.selectDropdownByColumnNameAndRowIndex("Country", "3", "United Kingdom");
+		homePage.selectDropdownByColumnNameAndRowIndex("Country", "1", "Japan");
+		
+		// Click vào checkbox tại cột NPO dòng thứ 1
+		homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?", "2");
+		homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?", "3");
+		
+	}
+	
+	@Test
+	public void TC_07_Guru() {
+		homePage.openUrl(driver, "http://live.techpanda.org/index.php/customer/account/create/");
+		
+		// đăng ký
+		String emailAddress = getEmailAddress();
+		homePage.createAnAccount("autotest", "fc", emailAddress, "123456", "123456");
+		homePage.sleepInSecond(2);
+		Assert.assertEquals(homePage.getSuccessMessage(), "Thank you for registering with Main Website Store.");
+		
+		// qua trang admin search
+		homePage.openUrl(driver, "http://live.techpanda.org/index.php/backendlogin/index/");
+		homePage.loginToAdminSite("user01", "guru99com");
+		homePage.sleepInSecond(2);
+		
+		// kiểm tra giá trị 
+		homePage.closePopup();
+		homePage.searchByNameAndEmail("autotest fc", emailAddress);
+		
+//		Assert.assertTrue(homePage.getValuesDisplayedByColumnName("Name").contains("autotest fc"));
+		Assert.assertEquals(homePage.getValuesDisplayedByColumnName("Email"), emailAddress);
 		
 	}
 	@AfterClass
