@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite parallel="false" name="DataTable - DataGrid">
-  <parameter name="url" value="https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/" />
+<suite parallel="false" name="Upload File">
+  <parameter name="url" value="https://blueimp.github.io/jQuery-File-Upload/" />
   
   <test name="Run on Firefox">
   <parameter name="browser" value="Firefox" />
     <classes>
-      <class name="com.jquery.table.Level_12_Handle_DataTable"/>
+      <class name="com.jquery.upload.Level_13_Upload_FIle"/>
+    </classes>
+  </test> 
+  
+  <test name="Run on Chrome">
+  <parameter name="browser" value="Chrome" />
+    <classes>
+      <class name="com.jquery.upload.Level_13_Upload_FIle"/>
+    </classes>
+  </test> 
+  
+  <test name="Run on Edge">
+  <parameter name="browser" value="Edge" />
+    <classes>
+      <class name="com.jquery.upload.Level_13_Upload_FIle"/>
     </classes>
   </test> 
 </suite> 

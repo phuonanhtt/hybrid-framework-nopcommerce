@@ -190,6 +190,6 @@ public class HomepageObject extends BasePage{
 	}
 	
 	public void waitPageLoadingSuccess() {
-		waitElementInvisible(driver, HomePageUI.LOADING_ICON_SEARCH);
+		waitForElementInvisible(driver, HomePageUI.LOADING_ICON_SEARCH);
 	}
 }

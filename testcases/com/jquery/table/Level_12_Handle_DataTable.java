@@ -22,7 +22,8 @@ public class Level_12_Handle_DataTable extends BaseTest {
 	
 	@Parameters({"browser", "url"})
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {		
+	public void beforeClass(String browserName, String url) {
+		//https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/
 		driver = getBrowserDriver(browserName, url);
 		
 		homePage = PageGeneratorManager.getHomepage(driver);
