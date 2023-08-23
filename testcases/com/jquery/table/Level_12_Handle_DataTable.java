@@ -140,8 +140,9 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		// kiểm tra giá trị 
 		homePage.closePopup();
 		homePage.searchByNameAndEmail("autotest fc", emailAddress);
+		homePage.waitPageLoadingSuccess();
 		
-//		Assert.assertTrue(homePage.getValuesDisplayedByColumnName("Name").contains("autotest fc"));
+		Assert.assertTrue(homePage.getValuesDisplayedByColumnName("Name").contains("autotest fc"));
 		Assert.assertEquals(homePage.getValuesDisplayedByColumnName("Email"), emailAddress);
 		
 	}

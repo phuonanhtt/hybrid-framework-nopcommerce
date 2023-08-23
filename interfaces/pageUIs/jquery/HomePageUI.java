@@ -30,5 +30,6 @@ public class HomePageUI {
 	
 	public static final String ADMIN_COLUMN_INDEX_BY_COLUMN_NAME = "XPATH=//span[text()='%s']/ancestor::th/preceding-sibling::th";
 	public static final String ADMIN_ALL_VALUES_BY_COLUMN_NAME = "XPATH=//tr[@class='even pointer']/td[%s]";
+	public static final String LOADING_ICON_SEARCH = "XPATH=//p[@class='loader']";
 	
 }

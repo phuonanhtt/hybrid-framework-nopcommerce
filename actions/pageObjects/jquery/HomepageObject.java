@@ -188,4 +188,8 @@ public class HomepageObject extends BasePage{
 		System.out.println(getElementText(driver, HomePageUI.ADMIN_ALL_VALUES_BY_COLUMN_NAME, String.valueOf(columnIndex)));
 		return getElementText(driver, HomePageUI.ADMIN_ALL_VALUES_BY_COLUMN_NAME, String.valueOf(columnIndex));
 	}
+	
+	public void waitPageLoadingSuccess() {
+		waitElementInvisible(driver, HomePageUI.LOADING_ICON_SEARCH);
+	}
 }
