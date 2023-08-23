@@ -28,7 +28,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		homePage = PageGeneratorManager.getHomepage(driver);
 	}
 
-//	@Test
+	@Test
 	public void TC_01_Search() {	
 		// Search dữ liệu trong 1 table (trên header)
 		homePage.inputToColumnTextboxByName("Females", "283821");
@@ -44,7 +44,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		homePage.sleepInSecond(2);
 	}
 	
-//	@Test
+	@Test
 	public void TC_02_Paging() {
 		// Click to any page
 		homePage.clickToPageByNumber("10");
@@ -60,7 +60,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		Assert.assertTrue(homePage.isPAgeActiveByNumber("16"));
 	}
 	
-//	@Test
+	@Test
 	public void TC_03_Displayed() {
 		// Verify for any row
 		Assert.assertTrue(homePage.isRowValuesDisplayed("276880", "Angola", "276472", "553353"));
@@ -68,7 +68,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		Assert.assertTrue(homePage.isRowValuesDisplayed("338282", "Argentina", "349238", "687522"));
 	}
 	
-//	@Test
+	@Test
 	public void TC_04_Icon_Button_Checkbox() {
 		// Click vào icon/ button/ checkbox của any row
 		// Tìm được 1 key là duy nhất của row đó so với row khác
@@ -89,7 +89,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		homePage.refreshCurrentPage(driver);
 	}
 
-//	@Test
+	@Test
 	public void TC_05_Get_All_Column_Values() {
 		// UI: Rest Assured/ Karate
 		allValueUI = homePage.getAllPageValuesByColumnName("Country");
@@ -104,7 +104,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 		
 	}
 	
-//	@Test
+	@Test
 	public void TC_06_Action_By_Index() {
 		homePage.openUrl(driver, "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
 		
