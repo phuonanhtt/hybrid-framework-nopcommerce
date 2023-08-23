@@ -320,6 +320,11 @@ public class BasePage {
 		return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
 	}
 	
+	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
+		String filePath = System.getProperty("user.dir") + "\\uploadFiles\\";
+		String fullFileNameString = "";
+		for (String file : fileNames)
+	}
 	public void switchToFrame(WebDriver driver, String locator) {
 		driver.switchTo().frame(getElement(driver, locator));
 	}
