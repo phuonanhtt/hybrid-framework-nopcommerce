@@ -35,4 +35,32 @@ public class UploadPageObject extends BasePage{
 		return isElementDisplayed(driver, UploadPageUI.FILE_UPLOADED_BY_NAME, fileName);
 	}
 	
+	public boolean isAllLoadingIconDisappear() {
+		return waitForListElementInvisible(driver, UploadPageUI.SPINNER_LOADING_ICON);
+	}
+	
+	public boolean isAllUploadProgressBarDisappear() {
+		return waitForListElementInvisible(driver, UploadPageUI.UPLOADING_PROGRESS_BAR_ICON);
+	}
+
+	public String getUploadedSuccessMsg() {
+		waitForElementVisible(driver, UploadPageUI.UPLOADED_SUCCESS_MESSAGE);
+		return getElementText(driver, UploadPageUI.UPLOADED_SUCCESS_MESSAGE);
+	}
+
+	public void clickToUploadedLink() {
+		waitForElementClickable(driver, UploadPageUI.UPLOADED_LINK);
+		clickToElement(driver, UploadPageUI.UPLOADED_LINK);
+	}
+
+	public boolean isContenTableDisplayed() {
+		waitForElementVisible(driver, UploadPageUI.CONTENT_TABLE_UPLOADED);
+		return isElementDisplayed(driver, UploadPageUI.CONTENT_TABLE_UPLOADED);
+	}
+
+	public boolean isDownloadButtonDisplayed(String fileName) {
+		waitForElementVisible(driver, UploadPageUI.DYNAMIC_DOWNLOAD_BUTTON_BY_FILE_NAME, fileName);
+		return isElementDisplayed(driver, UploadPageUI.DYNAMIC_DOWNLOAD_BUTTON_BY_FILE_NAME, fileName);
+	}
+	
 }

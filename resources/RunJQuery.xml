@@ -8,7 +8,7 @@
       <class name="com.jquery.upload.Level_13_Upload_FIle"/>
     </classes>
   </test> 
-  
+
   <test name="Run on Chrome">
   <parameter name="browser" value="Chrome" />
     <classes>
@@ -22,4 +22,6 @@
       <class name="com.jquery.upload.Level_13_Upload_FIle"/>
     </classes>
   </test> 
+
+  
 </suite> 

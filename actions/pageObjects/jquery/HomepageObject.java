@@ -189,7 +189,7 @@ public class HomepageObject extends BasePage{
 		return getElementText(driver, HomePageUI.ADMIN_ALL_VALUES_BY_COLUMN_NAME, String.valueOf(columnIndex));
 	}
 	
-	public void waitPageLoadingSuccess() {
-		waitForElementInvisible(driver, HomePageUI.LOADING_ICON_SEARCH);
+	public boolean waitPageLoadingSuccess() {
+		return waitForElementInvisible(driver, HomePageUI.LOADING_ICON_SEARCH);
 	}
 }
