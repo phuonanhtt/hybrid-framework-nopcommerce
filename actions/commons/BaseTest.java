@@ -7,12 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 public class BaseTest {
 	// Chứa những hàm dùng chung cho cả layer testcases
 	private WebDriver driver;
 	private long timeout = GlobalConstants.LONG_TIMEOUT;
-//	private String projectPath = System.getProperty("user.dir");
 	
 	protected WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -37,27 +38,15 @@ public class BaseTest {
 		return driver;
 	}
 	protected WebDriver getBrowserDriver(String browserName, String url) {
-		// equals: Kiểm tra giá trị có phân biệt hoa thường
-		// equalsIgnoreCase: Ko phân biệt hoa thường
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		switch (browserList) {
 		case CHROME:
-//			System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
-//			driver = new ChromeDriver();
-			
-			// 5.x
-			// Tự tải chromedriver tương ứng vs Chrome browser + khởi tạo driver lên
-//			driver = WebDriverManager.chromedriver().driverVersion("114.0.5735.90").create();
 			driver = new ChromeDriver();
 			break;
 		case FIREFOX:
-//			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-//			driver = new FirefoxDriver();
 			driver = new FirefoxDriver();
 			break;
 		case EDGE:
-//			System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
-//			driver = new EdgeDriver();
 			driver = new EdgeDriver();
 			break;
 		default:
@@ -79,5 +68,42 @@ public class BaseTest {
 		if (driver != null) {
 			driver.quit();
 		} 
+	}
+	protected boolean verifyTrue(boolean condition) {
+		boolean pass = true;
+		try {
+			Assert.assertTrue(condition);
+		} catch (Throwable e) {
+			pass = false;
+			// add report testNG
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			// add reportNG
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return pass;
+	}
+
+	protected boolean verifyFalse(boolean condition) {
+		boolean pass = true;
+		try {
+			Assert.assertFalse(condition);
+		} catch (Throwable e) {
+			pass = false;
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return pass;
+	}
+
+	protected boolean verifyEquals(Object actual, Object expected) {
+		boolean pass = true;
+		try {
+			Assert.assertEquals(actual, expected);
+		} catch (Throwable e) {
+			pass = false;
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return pass;
 	}
 }

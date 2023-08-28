@@ -34,9 +34,20 @@ public class Level_15_Assert_Verify extends BaseTest {
 	}
 
 	@Test
-	public void User_01_Register() {		
+	public void User_01_Register() {	
+		// Verify Register link hiển thị
+		verifyFalse(homePage.isRegisterLinkDisplayed());
+		
 		registerPage = homePage.clickToRegisterLink();
-
+		
+		registerPage.clickToRegisterButton();
+		
+		// verify message tại firstname textbox -> passed
+		verifyEquals(registerPage.getFirstNameErrorMessage(), "First name is required.");
+		
+		// verify message tại lastname textbox -> failed
+		verifyEquals(registerPage.getLastNameErrorMessage(), "Last name is required");
+		
 		registerPage.enterToFirstNameTextbox("John");
 		registerPage.enterToLastNameTextbox("Wick");
 		registerPage.enterToEmailTextbox(emailAddress);
@@ -44,12 +55,12 @@ public class Level_15_Assert_Verify extends BaseTest {
 		registerPage.enterToConfirmPasswordTextbox("12345678");	
 		
 		registerPage.clickToRegisterButton();
+		// verify success message -> failed
+		verifyEquals(registerPage.getSuccessMessage(), "Your registration completed.");
 	}
 	
-	@Test
+//	@Test
 	public void User_02_Login_Success() {	
-		Assert.assertEquals(registerPage.getSuccessMessage(), "Your registration completed");
-
 		homePage = registerPage.clickToHomePageLogo();
 		
 		loginPage = homePage.clickToLoginLink();
@@ -63,16 +74,6 @@ public class Level_15_Assert_Verify extends BaseTest {
 		Assert.assertEquals(customerPage.getEmailAttributeValue(), emailAddress);
 	}
 	
-	@Test
-	public void User_03_Switch_Page() {
-
-	}
-	
-	@Test
-	public void User_04_Page_Navigation() {
-
-		
-	}
 	@AfterClass
 	public void afterClass() {
 		quitBrowserDriver();
