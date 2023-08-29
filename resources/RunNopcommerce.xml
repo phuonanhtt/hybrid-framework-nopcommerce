@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite parallel="false" name="Nop Commerce UI Automation">
+<!DOCTYPE suite SYSTEM "testng-1.0.dtd" >
+<suite parallel="none" name="Nop Commerce UI Automation">
   <parameter name="userUrl" value="https://demo.nopcommerce.com/" />
   <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com" />
   
@@ -10,7 +11,7 @@
   <test name="Run on Firefox">
   <parameter name="browser" value="Firefox" />
     <classes>
-      <class name="com.nopcommerce.user.Level_15_Assert_Verify"/>
+      <class name="com.nopcommerce.user.Level_15_Log"/>
     </classes>
   </test> 
 </suite> 

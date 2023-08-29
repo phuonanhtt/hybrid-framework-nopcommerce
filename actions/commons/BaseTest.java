@@ -3,6 +3,8 @@ package commons;
 import java.time.Duration;
 import java.util.Random;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,6 +16,12 @@ public class BaseTest {
 	// Chứa những hàm dùng chung cho cả layer testcases
 	private WebDriver driver;
 	private long timeout = GlobalConstants.LONG_TIMEOUT;
+	protected final Log log;
+	
+	protected BaseTest() {
+//		log = LogFactory.getLog(BaseTest.class);
+		log = LogFactory.getLog(getClass());
+	}
 	
 	protected WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -73,8 +81,10 @@ public class BaseTest {
 		boolean pass = true;
 		try {
 			Assert.assertTrue(condition);
+			log.info("--------------- PASSED ---------------");
 		} catch (Throwable e) {
 			pass = false;
+			log.info("--------------- FAILED ---------------");
 			// add report testNG
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			// add reportNG
@@ -87,8 +97,10 @@ public class BaseTest {
 		boolean pass = true;
 		try {
 			Assert.assertFalse(condition);
+			log.info("--------------- PASSED ---------------");
 		} catch (Throwable e) {
 			pass = false;
+			log.info("--------------- FAILED ---------------");
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
 		}
@@ -99,8 +111,10 @@ public class BaseTest {
 		boolean pass = true;
 		try {
 			Assert.assertEquals(actual, expected);
+			log.info("--------------- PASSED ---------------");
 		} catch (Throwable e) {
 			pass = false;
+			log.info("--------------- FAILED ---------------");
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
 		}

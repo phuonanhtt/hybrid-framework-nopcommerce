@@ -14,7 +14,7 @@ import pageObjects.users.HomePageObject;
 import pageObjects.users.LoginPageObject;
 import pageObjects.users.RegisterPageObject;
 
-public class Level_15_Assert_Verify extends BaseTest {
+public class Level_14_Assert_Verify extends BaseTest {
 	private WebDriver driver;
 	private String emailAddress = getEmailAddress();
 	
