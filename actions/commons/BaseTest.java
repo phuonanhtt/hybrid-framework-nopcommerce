@@ -3,8 +3,8 @@ package commons;
 import java.time.Duration;
 import java.util.Random;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,11 +16,10 @@ public class BaseTest {
 	// Chứa những hàm dùng chung cho cả layer testcases
 	private WebDriver driver;
 	private long timeout = GlobalConstants.LONG_TIMEOUT;
-	protected final Log log;
+	protected final Logger log;
 	
 	protected BaseTest() {
-//		log = LogFactory.getLog(BaseTest.class);
-		log = LogFactory.getLog(getClass());
+		log = LogManager.getLogger(getClass());
 	}
 	
 	protected WebDriver getBrowserDriver(String browserName) {
