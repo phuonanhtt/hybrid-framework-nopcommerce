@@ -1,0 +1,57 @@
+[30-08-2023 21:10:51.579 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 01: Verify register link is displayed
+[30-08-2023 21:10:51.754 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:10:51.755 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[30-08-2023 21:10:52.410 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 03: Click to register button
+[30-08-2023 21:10:52.760 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 04: Verify error message at First name text box
+[30-08-2023 21:10:52.822 INFO com.nopcommerce.user.Level_15_Log] - --------------- PASSED ---------------
+[30-08-2023 21:10:52.822 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 05: Verify error message at Last name text box
+[30-08-2023 21:10:52.873 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:10:53.013 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 01: Verify register link is displayed
+[30-08-2023 21:10:53.095 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:10:53.095 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[30-08-2023 21:10:53.567 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 06: Enter to First name text box
+[30-08-2023 21:10:53.723 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 07: Enter to Last name text box
+[30-08-2023 21:10:53.832 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 08: Enter to 'Email' text box with value is user8836@gmail.com
+[30-08-2023 21:10:53.946 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 09: Enter to Password text box
+[30-08-2023 21:10:54.034 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 10: Enter to Confirm password text box
+[30-08-2023 21:10:54.122 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 11: Click to register button
+[30-08-2023 21:10:54.963 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 12: Verify success message is displayed
+[30-08-2023 21:10:55.072 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:01.315 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 01: Verify register link is displayed
+[30-08-2023 21:11:01.454 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:01.455 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[30-08-2023 21:11:02.611 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 03: Click to register button
+[30-08-2023 21:11:02.824 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 04: Verify error message at First name text box
+[30-08-2023 21:11:02.905 INFO com.nopcommerce.user.Level_15_Log] - --------------- PASSED ---------------
+[30-08-2023 21:11:02.906 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 05: Verify error message at Last name text box
+[30-08-2023 21:11:02.990 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:03.212 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 01: Verify register link is displayed
+[30-08-2023 21:11:03.261 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:03.262 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[30-08-2023 21:11:03.776 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 06: Enter to First name text box
+[30-08-2023 21:11:03.986 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 07: Enter to Last name text box
+[30-08-2023 21:11:04.196 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 08: Enter to 'Email' text box with value is user6116@gmail.com
+[30-08-2023 21:11:04.388 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 09: Enter to Password text box
+[30-08-2023 21:11:04.572 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 10: Enter to Confirm password text box
+[30-08-2023 21:11:04.786 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 11: Click to register button
+[30-08-2023 21:11:05.680 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 12: Verify success message is displayed
+[30-08-2023 21:11:05.749 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:11.237 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 01: Verify register link is displayed
+[30-08-2023 21:11:11.289 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:11.289 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[30-08-2023 21:11:12.311 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 03: Click to register button
+[30-08-2023 21:11:12.406 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 04: Verify error message at First name text box
+[30-08-2023 21:11:12.450 INFO com.nopcommerce.user.Level_15_Log] - --------------- PASSED ---------------
+[30-08-2023 21:11:12.450 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 05: Verify error message at Last name text box
+[30-08-2023 21:11:12.483 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:12.664 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 01: Verify register link is displayed
+[30-08-2023 21:11:12.708 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[30-08-2023 21:11:12.709 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[30-08-2023 21:11:13.151 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 06: Enter to First name text box
+[30-08-2023 21:11:13.289 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 07: Enter to Last name text box
+[30-08-2023 21:11:13.416 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 08: Enter to 'Email' text box with value is user3805@gmail.com
+[30-08-2023 21:11:13.542 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 09: Enter to Password text box
+[30-08-2023 21:11:13.664 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 10: Enter to Confirm password text box
+[30-08-2023 21:11:13.791 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 11: Click to register button
+[30-08-2023 21:11:14.623 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 12: Verify success message is displayed
+[30-08-2023 21:11:14.667 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------

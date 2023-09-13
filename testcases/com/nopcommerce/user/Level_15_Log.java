@@ -81,10 +81,6 @@ public class Level_15_Log extends BaseTest {
 	
 	@Test
 	public void User_03_Register_Success() {	
-		// Verify Register link hiển thị
-		log.info("Register - Step 01: Verify register link is displayed");
-		verifyFalse(homePage.isRegisterLinkDisplayed());
-		
 		log.info("Register - Step 02: Click to register link");
 		registerPage = homePage.clickToRegisterLink();
 		

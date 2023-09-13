@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "testng-1.0.dtd" >
+<suite parallel="none" name="Nop Commerce - Web Automation UI">
+  <parameter name="userUrl" value="https://demo.nopcommerce.com/" />
+  <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com" />
+  
+  <listeners>
+  	<listener class-name="commons.MethodListener"/>
+  	<listener class-name="reportConfig.ExtentTestListener"/>
+  	
+  </listeners>
+  
+  <test name="Run on Firefox">
+  <parameter name="browser" value="Firefox" />
+    <classes>
+      <class name="com.nopcommerce.user.Level_16_Extent_V2"/>
+    </classes>
+  </test> 
+  
+</suite> 

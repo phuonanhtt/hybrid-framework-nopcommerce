@@ -1,0 +1,19 @@
+[13-09-2023 18:12:04.979 INFO com.nopcommerce.user.Level_15_Log] - Starting delete all file in ReportNG screenshot
+[13-09-2023 18:12:04.987 INFO com.nopcommerce.user.Level_15_Log] - Deleted success
+[13-09-2023 18:12:14.275 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 01: Verify register link is displayed
+[13-09-2023 18:12:14.363 INFO com.nopcommerce.user.Level_15_Log] - --------------- PASSED ---------------
+[13-09-2023 18:12:14.363 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[13-09-2023 18:12:14.924 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 03: Click to register button
+[13-09-2023 18:12:15.237 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 04: Verify error message at First name text box
+[13-09-2023 18:12:15.305 INFO com.nopcommerce.user.Level_15_Log] - --------------- PASSED ---------------
+[13-09-2023 18:12:15.306 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 05: Verify error message at Last name text box
+[13-09-2023 18:12:15.350 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------
+[13-09-2023 18:12:15.363 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 02: Click to register link
+[13-09-2023 18:12:16.301 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 06: Enter to First name text box
+[13-09-2023 18:12:16.389 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 07: Enter to Last name text box
+[13-09-2023 18:12:16.464 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 08: Enter to 'Email' text box with value is user3060@gmail.com
+[13-09-2023 18:12:16.533 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 09: Enter to Password text box
+[13-09-2023 18:12:16.593 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 10: Enter to Confirm password text box
+[13-09-2023 18:12:16.659 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 11: Click to register button
+[13-09-2023 18:12:17.448 INFO com.nopcommerce.user.Level_15_Log] - Register - Step 12: Verify success message is displayed
+[13-09-2023 18:12:17.526 INFO com.nopcommerce.user.Level_15_Log] - --------------- FAILED ---------------

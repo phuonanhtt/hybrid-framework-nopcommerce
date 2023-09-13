@@ -1,0 +1,19 @@
+[13-09-2023 18:14:40.269 INFO com.nopcommerce.user.Level_16_Extent_V2] - Starting delete all file in ReportNG screenshot
+[13-09-2023 18:14:40.272 INFO com.nopcommerce.user.Level_16_Extent_V2] - Deleted success
+[13-09-2023 18:14:46.072 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 01: Verify register link is displayed
+[13-09-2023 18:14:46.166 INFO com.nopcommerce.user.Level_16_Extent_V2] - --------------- PASSED ---------------
+[13-09-2023 18:14:46.166 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 02: Click to register link
+[13-09-2023 18:14:46.648 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 03: Click to register button
+[13-09-2023 18:14:46.971 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 04: Verify error message at First name text box
+[13-09-2023 18:14:47.041 INFO com.nopcommerce.user.Level_16_Extent_V2] - --------------- PASSED ---------------
+[13-09-2023 18:14:47.041 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 05: Verify error message at Last name text box
+[13-09-2023 18:14:47.071 INFO com.nopcommerce.user.Level_16_Extent_V2] - --------------- PASSED ---------------
+[13-09-2023 18:14:47.075 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 02: Click to register link
+[13-09-2023 18:14:47.493 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 06: Enter to First name text box
+[13-09-2023 18:14:47.586 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 07: Enter to Last name text box
+[13-09-2023 18:14:47.651 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 08: Enter to 'Email' text box with value is user6078@gmail.com
+[13-09-2023 18:14:47.717 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 09: Enter to Password text box
+[13-09-2023 18:14:47.775 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 10: Enter to Confirm password text box
+[13-09-2023 18:14:47.839 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 11: Click to register button
+[13-09-2023 18:14:49.136 INFO com.nopcommerce.user.Level_16_Extent_V2] - Register - Step 12: Verify success message is displayed
+[13-09-2023 18:14:49.207 INFO com.nopcommerce.user.Level_16_Extent_V2] - --------------- PASSED ---------------
