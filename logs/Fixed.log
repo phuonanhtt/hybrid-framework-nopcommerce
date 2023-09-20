@@ -728,3 +728,11 @@
 [13-09-2023 21:20:18.496 INFO com.nopcommerce.user.Level_16_Extent_V5] - Deleted success
 [13-09-2023 21:28:07.949 INFO com.nopcommerce.user.Level_16_Extent_V5] - Starting delete all file in ReportNG screenshot
 [13-09-2023 21:28:07.956 INFO com.nopcommerce.user.Level_16_Extent_V5] - Deleted success
+[20-09-2023 21:37:23.779 INFO com.nopcommerce.user.Level_17_Allure_Report] - Starting delete all file in ReportNG screenshot
+[20-09-2023 21:37:23.803 INFO com.nopcommerce.user.Level_17_Allure_Report] - Deleted success
+[20-09-2023 21:43:07.471 INFO com.nopcommerce.user.Level_17_Allure_Report] - Starting delete all file
+[20-09-2023 21:43:07.495 INFO com.nopcommerce.user.Level_17_Allure_Report] - Deleted success
+[20-09-2023 21:59:11.067 INFO com.nopcommerce.user.Level_17_Allure_Report] - Starting delete all file
+[20-09-2023 21:59:11.079 INFO com.nopcommerce.user.Level_17_Allure_Report] - Deleted success
+[20-09-2023 22:10:34.055 INFO com.nopcommerce.user.Level_17_Allure_Report] - Starting delete all file
+[20-09-2023 22:10:34.066 INFO com.nopcommerce.user.Level_17_Allure_Report] - Deleted success

@@ -30,5 +30,12 @@
 	<classpathentry kind="lib" path="libExtent5/lombok-1.18.26.jar"/>
 	<classpathentry kind="lib" path="libExtent5/reactive-streams-1.0.4.jar"/>
 	<classpathentry kind="lib" path="libExtent5/rxjava-3.1.6.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-java-commons-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-model-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-test-filter-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/allure-testng-2.24.0.jar"/>
+	<classpathentry kind="lib" path="libAllure/bsh-2.0b6.jar"/>
+	<classpathentry kind="lib" path="libAllure/jcommander-1.72.jar"/>
+	<classpathentry kind="lib" path="libAllure/slf4j-api-1.7.36.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
