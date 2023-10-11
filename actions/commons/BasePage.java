@@ -8,6 +8,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -94,7 +95,7 @@ public class BasePage {
 	}
 
 	public Alert waitForAlertPresence(WebDriver driver) {
-		return new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.alertIsPresent());
+		return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.alertIsPresent());
 	}
 
 	public void switchToWindowByID(WebDriver driver, String windowID) {
@@ -286,15 +287,38 @@ public class BasePage {
 			}
 		}
 	}
-
+	// case 1: Element có hiển thị trên UI và có trong HTML: isDisplayed trả về true
+	// case 2: Element ko hiển thị trên UI và có trong HTML: isDisplayed trả về false
 	public boolean isElementDisplayed(WebDriver driver, String locator) {
 		return getElement(driver, locator).isDisplayed();
+
 	}
 	
 	public boolean isElementDisplayed(WebDriver driver, String locator, String... restParam) {
 		return getElement(driver, getDynamicLocator(locator, restParam)).isDisplayed();
 	}
 
+	public void setImplicitWait(WebDriver driver, long timeout) {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
+	}
+	
+	// Case 3: Element ko có trên UI và ko có trong DOM
+	public boolean isElementUnDisplayed(WebDriver driver, String locator) {
+		// Trước khi tìm element thì set time ngắn
+		setImplicitWait(driver, shortTimeout);
+		List<WebElement> elements = getLisElement(driver, locator);
+		// Trả lại timeout mặc định cho các step còn lại
+		setImplicitWait(driver, longTimeout);
+		// Element ko có trên UI và ko có trong DOM => true
+		if(elements.size() == 0) {
+			return true;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) { // Element ko có trên UI và có trong DOM => true
+			return true;
+		} else { // Element có trên UI và có trong DOM => false
+			return false;
+		}
+	}
+	
 	public boolean isElementSelected(WebDriver driver, String locator) {
 		return getElement(driver, locator).isSelected();
 	}
@@ -437,35 +461,35 @@ public class BasePage {
 	}
 
 	public void waitForElementVisible(WebDriver driver, String locator) {
-		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
 	}
 	
 	public void waitForElementVisible(WebDriver driver, String locator, String... restParam) {
-		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(getDynamicLocator(locator, restParam))));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(getDynamicLocator(locator, restParam))));
 	}
 	
 	public void waitForListElementVisible(WebDriver driver, String locator) {
-		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.visibilityOfAllElements(getLisElement(driver, locator)));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfAllElements(getLisElement(driver, locator)));
 	}
 	
 	public void waitForElementClickable(WebDriver driver, String locator) {
-		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
 	}
 	
 	public void waitForElementClickable(WebDriver driver, WebElement element) {
-		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.elementToBeClickable(element));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 	public void waitForElementClickable(WebDriver driver, String locator, String... restParam) {
-		new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicLocator(locator, restParam))));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicLocator(locator, restParam))));
 	}
 	
 	public boolean waitForElementInvisible(WebDriver driver, String locator) {
-		return new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
+		return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
 	}
 	
 	public boolean waitForListElementInvisible(WebDriver driver, String locator) {
-		return new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.invisibilityOfAllElements(getLisElement(driver, locator)));
+		return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.invisibilityOfAllElements(getLisElement(driver, locator)));
 	}
 	
 	public HomePageObject clickToUserLogoutLink(WebDriver driver) {
@@ -479,5 +503,6 @@ public class BasePage {
 		clickToElement(driver, BasePageUI.ADMIN_LOGOUT_LINK);
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
-	private long timeout = GlobalConstants.LONG_TIMEOUT;
+	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
+	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 }

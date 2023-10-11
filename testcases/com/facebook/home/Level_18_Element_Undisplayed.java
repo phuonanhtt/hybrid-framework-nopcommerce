@@ -41,13 +41,53 @@ public class Level_18_Element_Undisplayed extends BaseTest {
 	@Test
 	public void Home_02_Element_Undisplayed_In_HTML() {	
 		homePage.enterToEmailTextbox("");
+		homePage.sleepInSecond(2);
 		
+		// Sau khi xóa dữ liệu trong Email textbox đi - thì confirm email textbox ko còn hiển thị trên UI
+		// Nhưng vẫn có trong HTML
 		log.info("Verify Confirm Email textbox is not displayed");
 		verifyFalse(homePage.isConfirmEmailTextboxDisplayed());
 	}
 	
+//	@Test
+	public void Home_03_Element_Undisplayed_Not_In_HTML_01() {	
+		homePage.clickToCloseSignUpPopup();
+		
+		log.info("Verify Firstname textbox is not displayed");
+		verifyFalse(homePage.isFirstNameTextboxDisplayed());
+		
+		log.info("Verify Surname textbox is not displayed");
+		verifyFalse(homePage.isSurNameTextboxDisplayed());
+		
+		log.info("Verify Email textbox is not displayed");
+		verifyFalse(homePage.isEmailTextboxDisplayed());
+		
+		log.info("Verify Password textbox is not displayed");
+		verifyFalse(homePage.isPasswordTextboxDisplayed());
+		
+		log.info("Verify Confirm Email textbox is not displayed");
+		verifyFalse(homePage.isConfirmEmailTextboxDisplayed());
+		
+	}
+	
 	@Test
-	public void Home_03_Element_Undisplayed_Not_In_HTML() {	
+	public void Home_04_Element_Undisplayed_Not_In_HTML_02() {	
+		homePage.clickToCloseSignUpPopup();
+		
+		log.info("Verify Firstname textbox is not displayed");
+		verifyTrue(homePage.isFirstNameTextboxUnDisplayed());
+		
+		log.info("Verify Surname textbox is not displayed");
+		verifyTrue(homePage.isSurNameTextboxUnDisplayed());
+		
+		log.info("Verify Email textbox is not displayed");
+		verifyTrue(homePage.isEmailTextboxUnDisplayed());
+		
+		log.info("Verify Password textbox is not displayed");
+		verifyTrue(homePage.isPasswordTextboxUnDisplayed());
+		
+		log.info("Verify Confirm Email textbox is not displayed");
+		verifyTrue(homePage.isConfirmEmailTextboxUnDisplayed());
 		
 	}
 	@AfterClass
