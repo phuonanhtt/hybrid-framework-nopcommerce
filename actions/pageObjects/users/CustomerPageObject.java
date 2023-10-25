@@ -3,7 +3,6 @@ package pageObjects.users;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import commons.BasePage;
 import pageUIs.users.CustomerPageUI;
 
 public class CustomerPageObject extends MyAccountSideBarPageObject{
@@ -29,5 +28,6 @@ public class CustomerPageObject extends MyAccountSideBarPageObject{
 		waitForElementVisible(driver, CustomerPageUI.EMAIL_TEXTBOX);
 		return getElementAttribute(driver, CustomerPageUI.EMAIL_TEXTBOX, "value");
 	}
+
 
 }

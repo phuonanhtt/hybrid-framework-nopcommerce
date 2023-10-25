@@ -8,7 +8,6 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.users.HomePageObject;
-import pageUIs.users.BasePageUI;
+import pageUIs.users.BaseElementUI;
 
 public class BasePage {
 	// Chứa những hàm dùng chung cho cả layer page objects
@@ -355,7 +354,7 @@ public class BasePage {
 			fullFileName = fullFileName + filePath + file + "\n";
 		}
 		fullFileName = fullFileName.trim();
-		getElement(driver, BasePageUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
+		getElement(driver, BaseElementUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
 	}
 	public void switchToFrame(WebDriver driver, String locator) {
 		driver.switchTo().frame(getElement(driver, locator));
@@ -493,14 +492,14 @@ public class BasePage {
 	}
 	
 	public HomePageObject clickToUserLogoutLink(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.USER_LOGOUT_LINK);
-		clickToElement(driver, BasePageUI.USER_LOGOUT_LINK);
+		waitForElementClickable(driver, BaseElementUI.USER_LOGOUT_LINK);
+		clickToElement(driver, BaseElementUI.USER_LOGOUT_LINK);
 		return PageGeneratorManager.getHomePage(driver);
 	}
 
 	public AdminLoginPageObject clickToAdminLogoutLink(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.ADMIN_LOGOUT_LINK);
-		clickToElement(driver, BasePageUI.ADMIN_LOGOUT_LINK);
+		waitForElementClickable(driver, BaseElementUI.ADMIN_LOGOUT_LINK);
+		clickToElement(driver, BaseElementUI.ADMIN_LOGOUT_LINK);
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;

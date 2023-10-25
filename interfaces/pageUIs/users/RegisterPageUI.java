@@ -16,5 +16,5 @@ public class RegisterPageUI {
 	public static final String CONFIRM_PASSWORD_ERROR_MESSAGE = "css=span#ConfirmPassword-error";
 	public static final String REGISTER_SUCCESS_MESAGE = "css=div.result";
 	
-	public static final String HOME_PAGE_LOGO_IMAGE = "css=div.header-logo img";
+	
 }

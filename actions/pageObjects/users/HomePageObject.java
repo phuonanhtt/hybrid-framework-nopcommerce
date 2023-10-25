@@ -2,11 +2,11 @@ package pageObjects.users;
 
 import org.openqa.selenium.WebDriver;
 
-import commons.BasePage;
+import commons.BaseElement;
 import commons.PageGeneratorManager;
 import pageUIs.users.HomePageUI;
 
-public class HomePageObject extends BasePage{
+public class HomePageObject extends BaseElement{
 	// Chứa những actions của page đó: click/ select/ verify/ getText/...
 	private WebDriver driver;
 	// Hàm khởi tạo của 1 class
@@ -27,6 +27,7 @@ public class HomePageObject extends BasePage{
 //	}
 	
 	public HomePageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 	
@@ -52,4 +53,6 @@ public class HomePageObject extends BasePage{
 		waitForElementVisible(driver, HomePageUI.REGISTER_LINK);
 		return isElementDisplayed(driver, HomePageUI.REGISTER_LINK);
 	}
+
+
 }
