@@ -832,3 +832,51 @@
 [11-10-2023 20:43:44.965 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
 [11-10-2023 20:43:44.965 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
 [11-10-2023 20:44:14.981 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:03:18.721 INFO com.facebook.home.Level_18_Element_Undisplayed] - Starting delete all file
+[11-10-2023 21:03:18.733 INFO com.facebook.home.Level_18_Element_Undisplayed] - Deleted success
+[11-10-2023 21:03:31.583 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:03:31.616 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:03:31.661 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:03:31.758 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:03:31.978 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is displayed
+[11-10-2023 21:03:32.111 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:03:34.599 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
+[11-10-2023 21:03:34.621 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:03:34.895 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Firstname textbox is not displayed
+[11-10-2023 21:13:47.262 INFO com.facebook.home.Level_18_Element_Undisplayed] - Starting delete all file
+[11-10-2023 21:13:47.285 INFO com.facebook.home.Level_18_Element_Undisplayed] - Deleted success
+[11-10-2023 21:13:59.206 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:13:59.256 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:13:59.418 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:13:59.488 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:13:59.662 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is displayed
+[11-10-2023 21:13:59.751 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:14:02.126 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
+[11-10-2023 21:14:02.146 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:14:02.425 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Firstname textbox is not displayed
+[11-10-2023 21:17:04.440 INFO com.facebook.home.Level_18_Element_Undisplayed] - Starting delete all file
+[11-10-2023 21:17:04.459 INFO com.facebook.home.Level_18_Element_Undisplayed] - Deleted success
+[11-10-2023 21:17:15.910 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:15.974 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:16.195 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:16.279 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:16.504 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is displayed
+[11-10-2023 21:17:16.724 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:19.073 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
+[11-10-2023 21:17:19.091 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:19.378 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Firstname textbox is not displayed
+[11-10-2023 21:17:24.442 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:24.443 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Surname textbox is not displayed
+[11-10-2023 21:17:29.492 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:29.492 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Email textbox is not displayed
+[11-10-2023 21:17:34.534 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:34.534 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Password textbox is not displayed
+[11-10-2023 21:17:39.562 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[11-10-2023 21:17:39.568 INFO com.facebook.home.Level_18_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
+[11-10-2023 21:17:44.610 INFO com.facebook.home.Level_18_Element_Undisplayed] - --------------- PASSED ---------------
+[25-10-2023 21:07:23.574 INFO com.nopcommerce.user.Level_19_Pattern_Object] - Starting delete all file
+[25-10-2023 21:07:23.596 INFO com.nopcommerce.user.Level_19_Pattern_Object] - Deleted success
+[25-10-2023 21:08:57.030 INFO com.nopcommerce.user.Level_19_Pattern_Object] - Starting delete all file
+[25-10-2023 21:08:57.041 INFO com.nopcommerce.user.Level_19_Pattern_Object] - Deleted success
+[25-10-2023 21:10:24.008 INFO com.nopcommerce.user.Level_19_Pattern_Object] - Starting delete all file
+[25-10-2023 21:10:24.024 INFO com.nopcommerce.user.Level_19_Pattern_Object] - Deleted success
