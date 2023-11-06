@@ -10,10 +10,14 @@
   	
   </listeners>
   
-  <test name="Run on Firefox">
+  <test name="Run on Firefox" preserve-order="true">
   <parameter name="browser" value="Firefox" />
     <classes>
-      <class name="com.nopcommerce.user.Level_19_Pattern_Object"/>
+      <class name="com.nopcommerce.share.Common_Register"/>
+      
+      <class name="com.nopcommerce.share.Order"/>
+      <class name="com.nopcommerce.share.Product"/>
+      <class name="com.nopcommerce.share.Payment"/>
     </classes>
   </test> 
   
