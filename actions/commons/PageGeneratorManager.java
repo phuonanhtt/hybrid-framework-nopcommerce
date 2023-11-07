@@ -1,6 +1,5 @@
 package commons;
 
-import org.checkerframework.common.reflection.qual.NewInstance;
 import org.openqa.selenium.WebDriver;
 
 import pageObjects.admin.AdminDashboardPageObject;

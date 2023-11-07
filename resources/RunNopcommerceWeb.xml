@@ -13,11 +13,11 @@
   <test name="Run on Firefox" preserve-order="true">
   <parameter name="browser" value="Firefox" />
     <classes>
-      <class name="com.nopcommerce.share.Common_Register"/>
+      <class name="com.nopcommerce.cookie.Common_Register"/>
       
-      <class name="com.nopcommerce.share.Order"/>
-      <class name="com.nopcommerce.share.Product"/>
-      <class name="com.nopcommerce.share.Payment"/>
+      <class name="com.nopcommerce.cookie.Order"/>
+      <class name="com.nopcommerce.cookie.Product"/>
+      <class name="com.nopcommerce.cookie.Payment"/>
     </classes>
   </test> 
   

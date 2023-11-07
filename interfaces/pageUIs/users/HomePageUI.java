@@ -11,6 +11,6 @@ public class HomePageUI {
 	public static final String LOGIN_LINK =	"css=a.ico-login";
 	public static final String LOGOUT_LINK = "css=a.ico-logout";
 	public static final String MY_ACCOUNT_LINK = "css=a.ico-account";
-	
+	public static final String CLOSE_BUTTON_IN_BAR_NOTI = "xpath=//div[@class='bar-notification success']/span[@class='close']";
 
 }
