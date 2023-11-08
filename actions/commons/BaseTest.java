@@ -1,6 +1,7 @@
 package commons;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Random;
 
@@ -13,6 +14,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	// Chứa những hàm dùng chung cho cả layer testcases
@@ -35,7 +38,14 @@ public class BaseTest {
 			driver = new ChromeDriver();
 			break;
 		case FIREFOX:
-			driver = new FirefoxDriver();
+			// Tự tải về + tự setting
+			// System.setProperty("webdriver.gecko.driver", GlobalConstants.RELATIVE_PROJECT_PATH + "\\browserDrivers\\geckodriver.exe");
+			
+			// WebDriverManager 5.x: Tải về driver + setting biến môi trường và khởi tạo browser lên
+			// driver = WebDriverManager.firefoxdriver().create();
+			
+			// Selenium Manager (Selenium version 4.6.0 trở lên)
+			 driver = new FirefoxDriver();
 			break;
 		case EDGE:
 			driver = new EdgeDriver();
@@ -78,9 +88,57 @@ public class BaseTest {
 	}
 	
 	protected void quitBrowserDriver() {
-		if (driver != null) {
-			driver.quit();
-		} 
+		// Tạo ra 1 biến là cmd bằng null
+		String cmd = null;
+		try {
+			String osName = GlobalConstants.OS_NAME.toLowerCase();
+			log.info("OS name = " + osName);
+
+			String driverInstanceName = driver.toString().toLowerCase();
+			log.info("Driver instance name = " + driverInstanceName);
+
+			String browserDriverName = null;
+
+			if (driverInstanceName.contains("chrome")) {
+				browserDriverName = "chromedriver";
+			} else if (driverInstanceName.contains("internetexplorer")) {
+				browserDriverName = "IEDriverServer";
+			} else if (driverInstanceName.contains("firefox")) {
+				browserDriverName = "geckodriver";
+			} else if (driverInstanceName.contains("edge")) {
+				browserDriverName = "msedgedriver";
+			} else if (driverInstanceName.contains("opera")) {
+				browserDriverName = "operadriver";
+			} else {
+				browserDriverName = "safaridriver";
+			}
+
+			if (osName.contains("window")) {
+				cmd = "taskkill /F /FI 'IMAGENAME eq " + browserDriverName + "*'";
+			} else {
+				cmd = "pkill " + browserDriverName;
+			}
+			
+			log.info("Command Line = " + cmd);
+			
+			// 1 - Close browser
+			if (driver != null) {
+				driver.manage().deleteAllCookies();
+				driver.quit();
+			}
+		} catch (Exception e) {
+			log.info(e.getMessage());
+		} finally {
+			// 2 - Quit driver (executable)
+			try {
+				Process process = Runtime.getRuntime().exec(cmd);
+				process.waitFor();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	protected boolean verifyTrue(boolean condition) {
 		boolean pass = true;
